@@ -31,3 +31,11 @@ html {
 	width: 250px;
 	font-size: 32px;
 }
+#timer{
+	color: white;
+	display: none;
+	text-align: center;
+}
+#timerp{
+	font-size: 256px;
+}
