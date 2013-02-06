@@ -1,0 +1,33 @@
+html { 
+	background: url(../img/fglogo.png) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#container{
+	width: 100%;
+	height: 25%;
+	position: absolute;
+	top: 35%;
+	margin: 0 0 0 0;
+}
+#inner-container{
+}
+
+#white{
+	color: white;
+	font-size: 64px;
+	padding-top: 25px;
+}
+#input-mysize{
+	height: 75px;
+	width: 700px;
+	font-size: 64px;
+}
+#input-buttonmysize{
+	height: 85px;
+	width: 250px;
+	font-size: 32px;
+}
