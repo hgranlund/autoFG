@@ -22,7 +22,7 @@ io.sockets.on('connection', function(socket) {
 	});
 	socket.on('ping', function(data) {
 		console.log(data.txt);
-		var child = exec("gphoto2 --capture-image", function(error, stdout, stderr) {
+		var child = exec("gphoto2 --capture-image-and-download", function(error, stdout, stderr) {
 			sys.print('stdout ' + stdout);
 			sys.print('stderr: ' + stderr);
 			if(error != null) {
