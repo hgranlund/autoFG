@@ -66,3 +66,21 @@ io.sockets.on('connection', function(socket) {
 		});
 	});
 });
+
+// var transport = nodemailer.createTransport("SMTP", {
+// 	service: "Gmail",
+// 	auth: {
+// 		user: "samfundet.fotostand@gmail.com",
+// 		pass: "Nikond100"
+// 	}
+// });
+
+// var mailOptions = {
+// 	from: "Fotogjengen ved Studentersamfundet i Trondhjem",
+// 	to: "str3sses@gmail.com",
+// 	subject: "Her er bildet ditt fra Fotogjengen ved Studentersamfundet i Trondhjems fotostand!",
+// 	body: " Vil du ha en papirkopi.... bla bla",
+// 	attachments: [{'filePath' : 'img/capt0001.jpg'}]
+// };
+
+// transport.sendMail(mailOptions);
