@@ -4,13 +4,6 @@ var page = 1;
 var image_number = 1;
 
 
-var transport = nodemailer.createTransport("SMTP", {
-	service: "Gmail",
-	auth: {
-		user: "samfundet.fotostand@gmail.com",
-		pass: "Nikond100"
-	}
-});
 
 var sys = require('sys');
 var exec = require('child_process').exec;
@@ -21,6 +14,13 @@ var TwoStep = require('twostep');
 var app = express();
 var socket = require('socket.io');
 
+var transport = nodemailer.createTransport("SMTP", {
+	service: "Gmail",
+	auth: {
+		user: "samfundet.fotostand@gmail.com",
+		pass: "Nikond100"
+	}
+});
 
 app.configure(function() {
 	app.use(express.static(__dirname + '/'));
@@ -52,6 +52,7 @@ io.sockets.on('connection', function(socket) {
 					};
 					transport.sendMail(mailOptions);
 					console.log("mail sent to " + mail);
+					socket.emit('image_taken',{'imgPath': imgPath});
 				}();
 			});
 		};
@@ -93,5 +94,6 @@ io.sockets.on('connection', function(socket) {
 			imgPath = path + "scaled/" + img_name;
 			recordImg("capt0000.jpg", path, img_name);
 		}
+
 	});
 });

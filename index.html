@@ -71,6 +71,10 @@
             }
             $("#timerp").text(count);
         }
+
+        socket.on('image_taken', function(imgPath){
+            alert(imgPath.imgPath);
+        })
         </script>
 
     </body>
