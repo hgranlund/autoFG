@@ -53,12 +53,13 @@
         });
 
         var count;
+        var counter;
         $(".button").click(function(){
             $("#inner-container").hide();
             $("#timer").show();
 
             count = 15;
-            var counter = setInterval(timer, 1000);
+            counter = setInterval(timer, 1000);
 
         });
 
@@ -66,6 +67,7 @@
             count = count -1;
             if(count <= 0){
                 socket.emit("ping",{txt:$(".email_text").text() });
+                clearInterval(counter);
                 $("#timer").hide();
                 $("#inner-container").show();
                 return;
