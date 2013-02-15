@@ -62,7 +62,8 @@
         function timer () {
             count = count -1;
             if(count <= 0){
-                socket.emit("ping",{txt:$(".email_text").text() });
+                var mail = $(".email_text").val();
+                socket.emit("ping",mail);
                 clearInterval(counter);
                 $("#timer").hide();
                 $("#inner-container").show();
