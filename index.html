@@ -47,20 +47,16 @@
         <script src="js/main.js"></script>
         <script src="http://localhost:3000/socket.io/socket.io.js"></script>
         <script>
+        
         var socket = io.connect('http://localhost:3000');
-        socket.on("pong",function(data){
-            // $("#msgbox").append(data.txt+"<br>");
-        });
-
         var count;
         var counter;
         $(".button").click(function(){
+            count = 15;
+            $("#timerp").text(count);
+            counter = setInterval(timer, 1000);
             $("#inner-container").hide();
             $("#timer").show();
-
-            count = 15;
-            counter = setInterval(timer, 1000);
-
         });
 
         function timer () {
